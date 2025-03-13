@@ -1,4 +1,4 @@
-import { Github } from '@lobehub/icons';
+// import { Github } from '@lobehub/icons';
 import { Grid } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
@@ -6,8 +6,11 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { ProductLogo } from '@/components/Branding';
-import { OFFICIAL_URL, imageUrl } from '@/const/url';
-import { isServerMode } from '@/const/version';
+import {
+  // OFFICIAL_URL,
+  imageUrl,
+} from '@/const/url';
+// import { isServerMode } from '@/const/version';
 import UserAvatar from '@/features/User/UserAvatar';
 
 import AiHeatmaps from '../AiHeatmaps';
@@ -94,7 +97,7 @@ const useStyles = createStyles(({ css, token, stylish, cx, responsive }) => ({
 const Preview = memo(() => {
   const { styles } = useStyles();
   const { t } = useTranslation('auth');
-  const isOfficial = !isServerMode && OFFICIAL_URL.includes(location.host);
+  // const isOfficial = !isServerMode && OFFICIAL_URL.includes(location.host);
 
   return (
     <div className={styles.preview}>
@@ -140,16 +143,16 @@ const Preview = memo(() => {
               <TotalWords inShare />
             </Grid>
           </Flexbox>
-          <div className={styles.footer}>
-            {isOfficial ? (
-              OFFICIAL_URL
-            ) : (
-              <Flexbox align={'center'} gap={8} horizontal>
-                <Github size={16} />
-                <span>lobehub/lobe-chat</span>
-              </Flexbox>
-            )}
-          </div>
+          {/*<div className={styles.footer}>*/}
+          {/*  {isOfficial ? (*/}
+          {/*    OFFICIAL_URL*/}
+          {/*  ) : (*/}
+          {/*    <Flexbox align={'center'} gap={8} horizontal>*/}
+          {/*      <Github size={16} />*/}
+          {/*      <span>lobehub/lobe-chat</span>*/}
+          {/*    </Flexbox>*/}
+          {/*  )}*/}
+          {/*</div>*/}
         </Center>
       </div>
     </div>

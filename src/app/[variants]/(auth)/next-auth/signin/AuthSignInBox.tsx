@@ -1,6 +1,6 @@
 'use client';
 
-import { LobeChat } from '@lobehub/ui/brand';
+import { Avatar } from '@lobehub/ui';
 import { Button, Col, Flex, Row, Skeleton, Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import { AuthError } from 'next-auth';
@@ -11,12 +11,17 @@ import { useTranslation } from 'react-i18next';
 
 import BrandWatermark from '@/components/BrandWatermark';
 import AuthIcons from '@/components/NextAuth/AuthIcons';
+import { BRANDING_NAME } from '@/const/branding';
 import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
 
 const { Title, Paragraph } = Typography;
 
 const useStyles = createStyles(({ css, token }) => ({
+  avatar: css`
+    display: flex;
+    justify-content: center;
+  `,
   button: css`
     text-transform: capitalize;
   `,
@@ -111,10 +116,10 @@ export default memo(() => {
           {/* Header */}
           <div className={styles.text}>
             <Title className={styles.title} level={4}>
-              <div>
-                <LobeChat size={48} />
+              <div className={styles.avatar}>
+                <Avatar avatar="/icons/logo.svg" />
               </div>
-              {t('signIn.start.title', { applicationName: 'LobeChat' })}
+              {t('signIn.start.title', { applicationName: BRANDING_NAME })}
             </Title>
             <Paragraph className={styles.description}>{t('signIn.start.subtitle')}</Paragraph>
           </div>

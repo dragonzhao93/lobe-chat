@@ -8,7 +8,7 @@ import {
   Download,
   Feather,
   FileClockIcon,
-  HardDriveDownload,
+  // HardDriveDownload,
   HardDriveUpload,
   LifeBuoy,
   LogOut,
@@ -33,7 +33,7 @@ import {
   mailTo,
 } from '@/const/url';
 import { isServerMode } from '@/const/version';
-import DataImporter from '@/features/DataImporter';
+// import DataImporter from '@/features/DataImporter';
 import { usePWAInstall } from '@/hooks/usePWAInstall';
 import { configService } from '@/services/config';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
@@ -116,11 +116,11 @@ export const useMenu = () => {
   const data = !isLogin
     ? []
     : ([
-        {
-          icon: <Icon icon={HardDriveDownload} />,
-          key: 'import',
-          label: <DataImporter>{t('import')}</DataImporter>,
-        },
+        // {
+        //   icon: <Icon icon={HardDriveDownload} />,
+        //   key: 'import',
+        //   label: <DataImporter>{t('import')}</DataImporter>,
+        // },
         isServerMode
           ? null
           : {
